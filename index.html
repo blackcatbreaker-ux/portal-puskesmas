@@ -88,7 +88,7 @@
                     </div>
                     <div>
                         <h1 class="font-bold text-white text-base tracking-wide leading-tight">E-PORTAL</h1>
-                        <p class="text-xs text-brand-400 font-medium">Puskesmas Sehat Utama</p>
+                        <p class="text-xs text-brand-400 font-medium">Puskesmas Sentolo II</p>
                     </div>
                 </div>
                 <button id="close-sidebar-btn" class="md:hidden text-slate-400 hover:text-white">
@@ -101,7 +101,7 @@
                 <div class="flex items-center space-x-3">
                     <img id="sidebar-user-avatar" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150" alt="Avatar" class="w-11 h-11 rounded-full border-2 border-brand-500 object-cover shadow-sm">
                     <div class="overflow-hidden">
-                        <h4 id="sidebar-user-name" class="text-sm font-semibold text-white truncate">dr. Budi Santoso</h4>
+                        <h4 id="sidebar-user-name" class="text-sm font-semibold text-white truncate">Indra Darma Setiawan</h4>
                         <span id="sidebar-user-role-badge" class="inline-block px-2 py-0.5 text-[10px] font-medium bg-brand-500/20 text-brand-300 rounded-full border border-brand-500/30">
                             Staf / Dokter
                         </span>
@@ -186,7 +186,7 @@
                             <span class="text-xs text-slate-500 font-medium px-2 hidden sm:inline">Simulasi Role:</span>
                             <select id="role-switcher" onchange="changeRole(this.value)" class="bg-white border border-slate-200 text-slate-800 text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer shadow-sm">
                                 <option value="pegawai">👨‍⚕️ Pegawai (dr. Budi)</option>
-                                <option value="admin">👨‍💼 Kapus / Admin (H. Achmad, M.Kes)</option>
+                                <option value="admin">👨‍💼 Kapus / Admin (drg. RA. Hannie PS)</option>
                             </select>
                         </div>
                     </div>
@@ -760,7 +760,7 @@
 
         // Leave Requests Data
         let leaveRequests = [
-            { id: 101, name: 'dr. Budi Santoso', jenis: 'Cuti Tahunan', tgl: '28 Sep - 30 Sep 2026', pengganti: 'dr. Siti Rahma', status: 'Pending', tugas: 'Pelayanan Poliklinik Pagi' },
+            { id: 101, name: 'Indra Darma Setiawan', jenis: 'Cuti Tahunan', tgl: '28 Sep - 30 Sep 2026', pengganti: 'dr. Siti Rahma', status: 'Pending', tugas: 'Pelayanan Poliklinik Pagi' },
             { id: 102, name: 'Ns. Andi Wijaya', jenis: 'Cuti Alasan Penting', tgl: '25 Sep 2026', pengganti: 'Ns. Ratna M.Si', status: 'Disetujui', tugas: 'Jaga IGD Shift Malam' },
             { id: 103, name: 'Apt. Rina Lestari', jenis: 'Cuti Sakit', tgl: '15 Sep - 16 Sep 2026', pengganti: 'Apt. Farhan', status: 'Disetujui', tugas: 'Penyiapan Obat Racikan' }
         ];
@@ -773,7 +773,7 @@
 
         // All Staff Attendance Recap Data (For Admin view)
         let staffRecap = [
-            { nip: '198803122015031002', nama: 'dr. Budi Santoso', unit: 'Poli Umum', hadir: 21, izin: 0, lambat: 1, percent: 98 },
+            { nip: '198803122015031002', nama: 'Indra Darma Setiawan', unit: 'Poli Umum', hadir: 21, izin: 0, lambat: 1, percent: 98 },
             { nip: '199005142018012005', nama: 'dr. Siti Rahma', unit: 'Poli Umum', hadir: 22, izin: 0, lambat: 0, percent: 100 },
             { nip: '198501222010011003', nama: 'Ns. Andi Wijaya, S.Kep', unit: 'Poli KIA / KB', hadir: 20, izin: 1, lambat: 2, percent: 92 },
             { nip: '199211082019032009', nama: 'Apt. Rina Lestari, S.Farm', unit: 'Farmasi', hadir: 21, izin: 1, lambat: 0, percent: 96 },
@@ -782,8 +782,8 @@
 
         // System Users Data
         let systemUsers = [
-            { nama: 'H. Achmad, M.Kes', nip: '197508102000031001', jabatan: 'Kepala Puskesmas', role: 'admin', status: 'Aktif' },
-            { nama: 'dr. Budi Santoso', nip: '198803122015031002', jabatan: 'Dokter Fungsional', role: 'pegawai', status: 'Aktif' },
+            { nama: 'drg. RA. Hannie PS', nip: '197508102000031001', jabatan: 'Kepala Puskesmas', role: 'admin', status: 'Aktif' },
+            { nama: 'Indra Darma Setiawan', nip: '198803122015031002', jabatan: 'Administrator', role: 'pegawai', status: 'Aktif' },
             { nama: 'Ns. Andi Wijaya, S.Kep', nip: '198501222010011003', jabatan: 'Perawat Penyelia', role: 'pegawai', status: 'Aktif' }
         ];
 
@@ -870,14 +870,14 @@
             const adminMenus = document.querySelectorAll('.admin-only');
 
             if(role === 'admin') {
-                nameEl.innerText = "H. Achmad, M.Kes";
+                nameEl.innerText = "drg. RA. Hannie PS";
                 roleBadge.innerText = "Kepala Puskesmas / Admin";
                 roleBadge.className = "inline-block px-2 py-0.5 text-[10px] font-medium bg-rose-500/20 text-rose-300 rounded-full border border-rose-500/30";
                 avatar.src = "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=150";
                 adminMenus.forEach(el => el.classList.remove('hidden'));
                 showToast('Mode Login Berubah', 'Anda sekarang masuk sebagai Pimpinan / Admin Puskesmas', 'info');
             } else {
-                nameEl.innerText = "dr. Budi Santoso";
+                nameEl.innerText = "Indra Darma Setiawan";
                 roleBadge.innerText = "Staf / Dokter Umum";
                 roleBadge.className = "inline-block px-2 py-0.5 text-[10px] font-medium bg-brand-500/20 text-brand-300 rounded-full border border-brand-500/30";
                 avatar.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150";
@@ -992,7 +992,7 @@
 
             leaveRequests.unshift({
                 id: Date.now(),
-                name: currentRole === 'admin' ? 'H. Achmad, M.Kes' : 'dr. Budi Santoso',
+                name: currentRole === 'admin' ? 'drg. RA. Hannie PS' : 'Indra Darma Setiawan',
                 jenis: jenis,
                 tgl: `${mulai} s/d ${selesai}`,
                 pengganti: pengganti,
@@ -1046,7 +1046,7 @@
                 kategori: kategori,
                 subjek: subjek,
                 isi: isi,
-                sender: 'dr. Budi Santoso',
+                sender: 'Indra Darma Setiawan',
                 anonim: isAnonim,
                 date: 'Hari Ini',
                 status: 'Menunggu Review'
